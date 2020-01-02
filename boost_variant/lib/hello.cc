@@ -1,9 +1,13 @@
 #include "hello.h"
-#include <string>
+// #include <string>
+#include <sstream>
 
 struct var_string : boost::static_visitor<std::string> {
   std::string operator()(int i) const {
-    return std::to_string(i);
+    // return std::to_string(i);
+    std::stringstream ss;
+    ss << i;
+    return ss.str();
   }
   std::string operator()(std::string str) const {
     return str;

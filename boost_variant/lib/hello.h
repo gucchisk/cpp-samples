@@ -1,6 +1,6 @@
 #include <boost/variant.hpp>
 
-using target = boost::variant<int, std::string, char*>;
+typedef boost::variant<int, std::string, char*> target;
 
 struct cap {
   target t;
