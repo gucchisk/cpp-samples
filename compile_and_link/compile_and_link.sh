@@ -5,6 +5,7 @@ echo "compile: g++ -c -o main.o main.cc"
 
 if [ "$(uname)" == 'Darwin' ]; then
     ld main.o -lc -lc++ -o hello
+    echo "link: ld main.o -lc -lc++ -o hello"
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
     if [ -e /etc/redhat-release ]; then
 	VERSION=$(rpm --eval %{centos_ver})
